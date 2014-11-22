@@ -3,7 +3,6 @@
 # Config
   $flickr_cache_file = 'cache/blog.txt';
   $flickr_max_cache_age = 86400;
-  $per_page = 5;
 
 # Get photos
   if ( file_exists ( $flickr_cache_file ) && time () - filemtime ( $flickr_cache_file ) < $flickr_max_cache_age ):
@@ -11,10 +10,6 @@
   else:
     require ( 'blog.php' );
   endif;
-
-# Get requested page
-  $page = ( isset($_GET['page']) ) ? intval(trim($_GET['page'])) : 1;
-  $count = count($flickr_data);
 
 ?>
 <!DOCTYPE html>
@@ -99,7 +94,7 @@
 
       <h3 class="icon-camera">Some recent photos</h3>
 
-<?php for ( $i = ($per_page * ($page-1)); $i < (min($per_page*$page, $count)); $i++): ?>
+<?php for ( $i = 0; $i < count($flickr_data); $i++): ?>
       <article>
         <p><a href="http://www.flickr.com/photos/<?= $flickr_data[$i]['ownername'] ?>/<?= $flickr_data[$i]['id'] ?>/"><img src="<?= $flickr_data[$i]['url_l'] ?>" alt="<?= $flickr_data[$i]['title'] ?>"></a></p>
       </article>
