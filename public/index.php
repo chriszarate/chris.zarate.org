@@ -24,9 +24,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
 
-    <title>test</title>
+    <title>Chris Zarate</title>
 
     <!-- Lato Web font -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
