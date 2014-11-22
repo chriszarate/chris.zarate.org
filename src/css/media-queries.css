@@ -1,0 +1,56 @@
+/* Media queries */
+
+@media only screen and (max-width: 700px) {
+
+  body {
+    padding: 1em;
+    font-size: 1em;
+  }
+
+  /* Break long URLs */
+
+  a {
+    word-wrap: break-word;
+  }
+
+  /* Condensed header */
+
+  h1 {
+    padding: 60px 0 0 0;
+    font-size: 2em;
+    text-align: center;
+    background-position: 50% 0;
+  }
+
+  .elsewhere {
+    position: static;
+    text-align: center;
+  }
+
+  .link {
+    width: 40px;
+  }
+
+  .service:hover .username {
+    display: none;
+  }
+
+  /* Condensed bullets */
+
+  .bullets {
+    margin: 1em 0.75em 1em 1.25em;
+  }
+
+
+  /* Condensed photos */
+
+  h3 {
+    font-size: 1.25em;
+    margin-bottom: 0.5em;
+  }
+
+  article {
+    padding-bottom: 1em;
+  }
+
+}

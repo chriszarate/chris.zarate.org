@@ -1,0 +1,115 @@
+<?php
+
+# Config
+  $flickr_cache_file = 'cache/blog.txt';
+  $flickr_max_cache_age = 86400;
+  $per_page = 5;
+
+# Get photos
+  if ( file_exists ( $flickr_cache_file ) && time () - filemtime ( $flickr_cache_file ) < $flickr_max_cache_age ):
+    $flickr_data = unserialize ( file_get_contents ( $flickr_cache_file ) );
+  else:
+    require ( 'blog.php' );
+  endif;
+
+# Get requested page
+  $page = ( isset($_GET['page']) ) ? intval(trim($_GET['page'])) : 1;
+  $count = count($flickr_data);
+
+?>
+<!DOCTYPE html>
+<html class="no-js">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <title>test</title>
+
+    <!-- Lato Web font -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+
+    <!-- Bundled CSS -->
+    <link rel="stylesheet" href="/build/app.min.css">
+
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+
+    <!-- Google Analytics -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXXXXXX');ga('send','pageview');
+    </script>
+
+  </head>
+
+  <body>
+
+    <header>
+
+      <h1><span>Chris Zarate</span></h1>
+
+      <ul class="elsewhere">
+        <li class="service">
+          <h4 class="username">&#099;&#104;&#114;&#105;&#115;&#064;&#122;&#097;&#114;&#097;&#116;&#101;&#046;&#111;&#114;&#103;</h4>
+          <a class="link icon-mail" href="mailto:&#099;&#104;&#114;&#105;&#115;&#064;&#122;&#097;&#114;&#097;&#116;&#101;&#046;&#111;&#114;&#103;"><span>E-mail</span></a>
+        </li>
+        <li class="service">
+          <h4 class="username">chriszarate</h4>
+          <a class="link icon-github-1" href="https://github.com/chriszarate"><span>Github</span></a>
+        </li>
+        <li class="service">
+          <h4 class="username">chriszarate</h4>
+          <a class="link icon-flickr-1" href="http://flickr.com/photos/chriszarate"><span>Flickr</span></a>
+        </li>
+        <li class="service">
+          <h4 class="username">chrzrt</h4>
+          <a class="link icon-twitter-1" href="http://twitter.com/chrzrt"><span>Twitter</span></a>
+        </li>
+        <li class="service">
+          <h4 class="username">chrzrt</h4>
+          <a class="link icon-instagram" href="http://instagram.com/chrzrt"><span>Instagram</span></a>
+        </li>
+      </ul>
+
+    </header>
+
+    <div class="introduction">
+
+      <p>I make things for me and for the Web. Here are a few things I made recently:</p>
+
+      <ul class="bullets">
+        <li><a href="http://tilde.club/~zarate">tilde.club/~zarate</a> –  a Web page on a UNIX computer</li>
+        <li><a href="http://maryhelenspecht.com">maryhelenspecht.com</a> – a site for author Mary Helen Specht</li>
+        <li><a href="http://bikeshare.me">bikeshare.me</a> – a <em>fast</em> glance at your favorite bike share stations</li>
+        <li><a href="https://github.com/chriszarate/grunt-load-options">grunt-load-options</a> – a Grunt plugin to modularize your Gruntfile</li>
+        <li><a href="http://chriszarate.github.io/sheetrock/">jquery.sheetrock</a> – quickly connect to, query, and lazy-load data from Google Spreadsheets</li>
+        <li><a href="http://supergenpass.com">supergenpass</a> – a bookmarklet password generator</li>
+      </ul>
+
+    </div>
+
+    <div class="main">
+
+      <h3 class="icon-camera">Some recent photos</h3>
+
+<?php for ( $i = ($per_page * ($page-1)); $i < (min($per_page*$page, $count)); $i++): ?>
+      <article>
+        <p><a href="http://www.flickr.com/photos/<?= $flickr_data[$i]['ownername'] ?>/<?= $flickr_data[$i]['id'] ?>/"><img src="<?= $flickr_data[$i]['url_l'] ?>" alt="<?= $flickr_data[$i]['title'] ?>"></a></p>
+      </article>
+<?php endfor; ?>
+
+    </div>
+
+    <p>See more at <a class="inline-link icon-flickr-1" href="http://flickr.com/photos/chriszarate">Flickr</a> and <a class="inline-link icon-instagram" href="http://instagram.com/chrzrt">Instagram</a>.</p>
+
+  </body>
+
+</html>

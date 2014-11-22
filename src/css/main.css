@@ -1,0 +1,194 @@
+/* Body */
+
+body {
+
+  max-width: 1024px;
+
+  margin: 0 auto;
+  padding: 2em;
+
+  color: #000;
+  background-color: #fff;
+
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.1em;
+
+  line-height: 1.5em;
+
+}
+
+header {
+  position: relative;
+}
+
+
+/* Links */
+
+a {
+  color: #00f;
+}
+
+
+/* Headers */
+
+h1 {
+  height: 60px;
+  overflow: hidden;
+  margin: 0.2em 0;
+  padding-left: 75px;
+  font-size: 2.5em;
+  line-height: 60px;
+  background-image: url('/assets/png/avatar-48x60.png');
+  background-size: 48px 60px;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
+
+h3 {
+  margin: 2.5em 0 1em 0;
+  padding-bottom: 0.25em;
+  font-size: 1.5em;
+}
+
+
+/* Elsewhere */
+
+.elsewhere {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: right;
+  /* Prevents flickering text on transform transition */
+  -webkit-transform: translate3d(0, 0, 0);
+  /* Prevents tap highlight on iOS */
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.service {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+}
+
+.link {
+  display: inline-block;
+  overflow: hidden;
+  width: 50px;
+  color: #bbb;
+  font-size: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
+}
+
+.link:before {
+  padding-right: 0;
+}
+
+.link:hover {
+  -webkit-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+}
+
+.link span {
+  display: none;
+}
+
+.username {
+  position: absolute;
+  display: none;
+  width: 130px;
+  left: 50%;
+  margin: 35px 0 0 -65px;
+  color: #bbb;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  text-align: center;
+}
+
+.service:hover .username {
+  display: block;
+}
+
+.icon-mail:hover, .icon-mail:active {
+  color: #36c;
+}
+
+.icon-github-1:hover, .icon-github-1:active {
+  color: #333;
+}
+
+.icon-flickr-1:hover, .icon-flickr-1:active {
+  color: #f08;
+}
+
+.icon-twitter-1:hover, .icon-twitter-1:active {
+  color: #5ae;
+}
+
+.icon-instagram:hover, .icon-instagram:active {
+  color: #654;
+}
+
+
+/* Introduction */
+
+.introduction {
+  margin: 2em 0;
+  font-size: 1.2em;
+}
+
+.bullets {
+  margin: 1em 1.5em;
+  padding: 0;
+}
+
+.bullets li {
+  margin: 0.25em 0;
+}
+
+
+/* Photos */
+
+.main {
+  position: relative;
+}
+
+article {
+  margin: 0;
+  padding: 0 0 3em 0;
+}
+
+article p {
+  margin: 0;
+}
+
+article img {
+  max-width: 100%;
+  height: auto;
+}
+
+.inline-link:before {
+  padding-left: 0.2em;
+  padding-right: 0.3em;
+  text-decoration: none;
+}
+
+
+/* Notification */
+
+.notice {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #999;
+  font-size: 1.1em;
+  transition: opacity 1s ease-in-out;
+}
+
+.transparent {
+  opacity: 0;
+}
