@@ -82,6 +82,7 @@ h3 {
   text-align: center;
   text-decoration: none;
   transition: all 0.15s ease-in-out;
+  transition-property: color, -webkit-transform, transform;
 }
 
 .link:before {
@@ -99,18 +100,19 @@ h3 {
 
 .username {
   position: absolute;
-  display: none;
   width: 130px;
   left: 50%;
   margin: 35px 0 0 -65px;
   color: #bbb;
+  opacity: 0;
   font-size: 0.9em;
   line-height: 0.9em;
   text-align: center;
+  transition: opacity 0.15s ease-in-out;
 }
 
 .service:hover .username {
-  display: block;
+  opacity: 1;
 }
 
 .icon-mail:hover, .icon-mail:active {
