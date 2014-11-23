@@ -34,7 +34,7 @@
 
   </head>
 
-  <body>
+  <body class="no-touch">
 
     <header>
 
@@ -93,6 +93,22 @@
     </div>
 
     <p>See more at <a class="inline-link icon-flickr-1" href="http://flickr.com/photos/chriszarate">Flickr</a> and <a class="inline-link icon-instagram" href="http://instagram.com/chrzrt">Instagram</a>.</p>
+
+    <script>
+
+      // Detect a touch event implementation and remove 'no-touch' class.
+      // http://www.stucox.com/blog/you-cant-detect-a-touchscreen/
+      var hasTouchEvent = function () {
+        document.body.className = '';
+        console.log('y');
+        window.removeEventListener('touchstart', hasTouchEvent);
+      };
+
+      if (window.addEventListener) {
+        window.addEventListener('touchstart', hasTouchEvent, false);
+      }
+
+    </script>
 
   </body>
 

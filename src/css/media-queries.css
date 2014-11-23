@@ -31,10 +31,6 @@
     width: 40px;
   }
 
-  .service:hover .username {
-    display: none;
-  }
-
   /* Condensed bullets */
 
   .bullets {

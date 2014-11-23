@@ -89,7 +89,7 @@ h3 {
   padding-right: 0;
 }
 
-.link:hover {
+.no-touch .link:hover {
   -webkit-transform: scale(1.2, 1.2);
   transform: scale(1.2, 1.2);
 }
@@ -111,27 +111,27 @@ h3 {
   transition: opacity 0.15s ease-in-out;
 }
 
-.service:hover .username {
+.no-touch .service:hover .username {
   opacity: 1;
 }
 
-.icon-mail:hover, .icon-mail:active {
+.no-touch .icon-mail:hover {
   color: #36c;
 }
 
-.icon-github-1:hover, .icon-github-1:active {
+.no-touch .icon-github-1:hover {
   color: #333;
 }
 
-.icon-flickr-1:hover, .icon-flickr-1:active {
+.no-touch .icon-flickr-1:hover {
   color: #f08;
 }
 
-.icon-twitter-1:hover, .icon-twitter-1:active {
+.no-touch .icon-twitter-1:hover {
   color: #5ae;
 }
 
-.icon-instagram:hover, .icon-instagram:active {
+.no-touch .icon-instagram:hover {
   color: #654;
 }
 
