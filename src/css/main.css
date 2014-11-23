@@ -115,6 +115,10 @@ h3 {
   opacity: 1;
 }
 
+.no-touch .service:hover .username:hover {
+  opacity: 0;
+}
+
 .no-touch .icon-mail:hover {
   color: #36c;
 }
