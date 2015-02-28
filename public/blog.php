@@ -33,7 +33,7 @@
   $rest_params['user_id']  = $flickr_user_id;
 
   $rest_params['sort']     = 'date-posted-desc';
-  $rest_params['per_page'] = '5';
+  $rest_params['per_page'] = '10';
   $rest_params['extras']   = 'date_taken,date_upload,owner_name,o_dims,url_l';
 
 
