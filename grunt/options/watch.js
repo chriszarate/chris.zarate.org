@@ -1,7 +1,5 @@
 /* grunt-contrib-watch */
 
-'use strict';
-
 module.exports = {
   javascript: {
     options: {
@@ -13,7 +11,8 @@ module.exports = {
       'uglify'
     ],
     files: [
-      'src/js/**/*.js'
+      'vendor/js/**/*.js',
+      'src/**/*.js'
     ]
   },
   css: {
@@ -21,11 +20,10 @@ module.exports = {
       livereload: true
     },
     tasks: [
-      'concat',
-      'cssmin'
+      'sass'
     ],
     files: [
-      'src/css/**/*.css'
+      'src/**/*.scss'
     ]
   }
 };

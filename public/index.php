@@ -22,11 +22,8 @@
 
     <title>Chris Zarate</title>
 
-    <!-- Lato Web font -->
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
-
     <!-- Bundled CSS -->
-    <link rel="stylesheet" href="/build/app.min.css">
+    <link rel="stylesheet" href="build/app.min.css">
 
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
@@ -36,9 +33,9 @@
 
   <body class="no-touch">
 
-    <header>
+    <header class="menu">
 
-      <h1><span>Chris Zarate</span></h1>
+      <h1 class="banner"><span>Chris Zarate</span></h1>
 
       <ul class="elsewhere">
         <li class="service">
@@ -82,33 +79,17 @@
 
     <div class="main">
 
-      <h3 class="icon-camera">Some recent photos</h3>
+      <h3 class="photos-head icon-camera">Some recent photos</h3>
 
 <?php for ( $i = 0; $i < count($flickr_data); $i++): ?>
-      <article>
+      <div class="photo">
         <p><a href="http://www.flickr.com/photos/<?= $flickr_data[$i]['ownername'] ?>/<?= $flickr_data[$i]['id'] ?>/"><img src="<?= $flickr_data[$i]['url_l'] ?>" alt="<?= $flickr_data[$i]['title'] ?>"></a></p>
-      </article>
+      </div>
 <?php endfor; ?>
 
     </div>
 
     <p>See more at <a class="inline-link icon-flickr-1" href="http://flickr.com/photos/chriszarate">Flickr</a> and <a class="inline-link icon-instagram" href="http://instagram.com/chrzrt">Instagram</a>.</p>
-
-    <script>
-
-      // Detect a touch event implementation and remove 'no-touch' class.
-      // http://www.stucox.com/blog/you-cant-detect-a-touchscreen/
-      var hasTouchEvent = function () {
-        document.body.className = '';
-        console.log('y');
-        window.removeEventListener('touchstart', hasTouchEvent);
-      };
-
-      if (window.addEventListener) {
-        window.addEventListener('touchstart', hasTouchEvent, false);
-      }
-
-    </script>
 
   </body>
 

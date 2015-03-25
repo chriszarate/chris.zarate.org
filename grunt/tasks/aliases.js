@@ -1,17 +1,16 @@
 /* Grunt task aliases */
 
-'use strict';
-
 module.exports = function (grunt) {
+
+  'use strict';
 
   grunt.registerTask(
     'default',
     [
       'jshint',
-      'concat',
-      'cssmin',
       'browserify',
-      'uglify'
+      'uglify',
+      'sass'
     ]
   );
 

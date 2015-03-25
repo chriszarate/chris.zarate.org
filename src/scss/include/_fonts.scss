@@ -1,0 +1,11 @@
+/* Fonts */
+
+$body-fallback-font: 'Garamond', serif;
+$body-font: 'Alegreya', $body-fallback-font;
+
+$header-fallback-font: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$header-level-1-font: 'Raleway', $header-fallback-font;
+$header-level-2-font: 'Lato', $header-fallback-font;
+
+$monospace-fallback-font: monospace;
+$monospace-font: 'Inconsolata', $monospace-fallback-font;

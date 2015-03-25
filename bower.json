@@ -1,7 +1,6 @@
 {
-  "name": "test",
-  "version": "0.1.0",
+  "name": "chris.zarate.org",
   "dependencies": {
-    "normalize.css": "^3.0.1"
+    "normalize-scss": "~3.0.2"
   }
 }

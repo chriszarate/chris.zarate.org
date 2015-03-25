@@ -1,0 +1,127 @@
+/* Header */
+
+.menu {
+  position: relative;
+}
+
+.banner {
+  height: 60px;
+  overflow: hidden;
+  margin: 0.2em 0;
+  padding-left: 75px;
+  font-size: 2.5em;
+  line-height: 60px;
+  background-image: url('/assets/png/avatar-48x60.png');
+  background-size: 48px 60px;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
+
+
+/* Elsewhere */
+
+.elsewhere {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: right;
+  /* Prevents flickering text on transform transition */
+  -webkit-transform: translate3d(0, 0, 0);
+  /* Prevents tap highlight on iOS */
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.service {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+}
+
+.link {
+
+  display: inline-block;
+  overflow: hidden;
+  width: 50px;
+  color: #bbb;
+  font-size: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
+  transition-property: color, -webkit-transform, transform;
+
+  &:before {
+    padding-right: 0;
+  }
+
+  span {
+    display: none;
+  }
+
+}
+
+.no-touch {
+  .link {
+    &:hover {
+      -webkit-transform: scale(1.2, 1.2);
+      transform: scale(1.2, 1.2);
+    }
+  }
+}
+
+.username {
+  position: absolute;
+  width: 130px;
+  left: 50%;
+  margin: 35px 0 0 -65px;
+  color: #bbb;
+  opacity: 0;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  text-align: center;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.no-touch {
+
+  .service:hover {
+    .username {
+      opacity: 1;
+    }
+  }
+
+  .service:hover {
+    .username:hover {
+      opacity: 0;
+    }
+  }
+
+  .icon-mail:hover {
+    color: #36c;
+  }
+
+  .icon-github-1:hover {
+    color: #333;
+  }
+
+  .icon-flickr-1:hover {
+    color: #f08;
+  }
+
+  .icon-twitter-1:hover {
+    color: #5ae;
+  }
+
+  .icon-instagram:hover {
+    color: #654;
+  }
+
+}
+
+.inline-link:before {
+  padding-left: 0.2em;
+  padding-right: 0.3em;
+  text-decoration: none;
+}

@@ -2,7 +2,7 @@
 
 /*
   Flickr Tag Blog
-	Requires http://github.com/chriszarate/flickr-wormhole
+  Requires http://github.com/chriszarate/flickr-wormhole
 */
 
 

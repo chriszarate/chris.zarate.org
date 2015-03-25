@@ -1,0 +1,52 @@
+/* Print styles */
+
+@media print {
+
+  @page {
+    margin: 0.75in 0.5in;
+    size: 8.5in 11in;
+  }
+
+  @page:first {
+    margin: 0.5in 0.5in;
+  }
+
+  body {
+    font-size: 90%;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  /* Avoid breaks */
+
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  p, h2, h3, h4{
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Doesn't work in WebKit */
+  h1, h2, h3, h4, .section-head, .sub-section-head {
+    page-break-after: avoid;
+  }
+
+  .section, .section-head {
+    page-break-inside: avoid;
+  }
+
+  /* Show print-only elements */
+
+  .print-only {
+    display: block;
+  }
+
+}

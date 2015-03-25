@@ -1,0 +1,23 @@
+/* Contact */
+
+.mail {
+
+  font-family: $header-level-2-font;
+  margin: 0.5em 0;
+
+  a {
+
+    border-bottom: solid 4px $mail-link-underline-color;
+    color: $page-text-color;
+    padding: 4px 0;
+    text-decoration: none;
+
+    &:hover {
+      border-color: $mail-link-underline-hover-color;
+      color: $page-text-color;
+    }
+
+  }
+
+}
+

@@ -3,8 +3,8 @@
 @media only screen and (max-width: 700px) {
 
   body {
-    padding: 1em;
     font-size: 1em;
+    padding: 1em;
   }
 
   /* Break long URLs */
@@ -15,7 +15,7 @@
 
   /* Condensed header */
 
-  h1 {
+  .banner {
     padding: 60px 0 0 0;
     font-size: 2em;
     text-align: center;
@@ -37,16 +37,28 @@
     margin: 1em 0.75em 1em 1.25em;
   }
 
-
   /* Condensed photos */
 
-  h3 {
+  .photos-head {
     font-size: 1.25em;
     margin-bottom: 0.5em;
   }
 
-  article {
+  .photo {
     padding-bottom: 1em;
+  }
+
+  /* Reduce padding in smaller containers */
+
+  .notice {
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+
+  .collapsed li {
+    line-height: 1.5em;
+    margin: 0 6px 6px 0;
+    padding: 0 5px;
   }
 
 }

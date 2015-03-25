@@ -1,0 +1,27 @@
+/* Photos */
+
+.main {
+  position: relative;
+}
+
+.photos-head {
+  margin: 2.5em 0 1em 0;
+  padding-bottom: 0.25em;
+  font-size: 1.5em;
+}
+
+.photo {
+
+  margin: 0;
+  padding: 0 0 3em 0;
+
+  p {
+    margin: 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+}

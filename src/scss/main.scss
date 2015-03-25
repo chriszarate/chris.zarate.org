@@ -1,0 +1,48 @@
+/* Normalize.css */
+
+@import '../../bower_components/normalize-scss/_normalize';
+
+
+/* Embed */
+
+@import 'embed/google-fonts';
+@import 'embed/fontello-icons';
+
+
+/* Include */
+
+@import 'include/fonts';
+@import 'include/colors';
+
+
+/* Base */
+
+@import 'base/block';
+@import 'base/body';
+@import 'base/headers';
+@import 'base/links';
+
+
+/* Layout */
+
+@import 'layout/flex-box';
+@import 'layout/hidden';
+@import 'layout/pages';
+@import 'layout/sections';
+
+
+/* Components */
+
+@import 'components/callouts';
+@import 'components/contact';
+@import 'components/introduction';
+@import 'components/notices';
+@import 'components/personal-menu';
+@import 'components/photos';
+@import 'components/skills';
+
+
+/* Media queries */
+
+@import 'media/print';
+@import 'media/responsive';
