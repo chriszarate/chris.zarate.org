@@ -3,16 +3,17 @@
 @media print {
 
   @page {
-    margin: 0.75in 0.5in;
+    margin: 0;
+    padding: 0.75in 0.5in;
     size: 8.5in 11in;
   }
 
   @page:first {
-    margin: 0.5in 0.5in;
+    padding: 0.5in 0.5in;
   }
 
   body {
-    font-size: 90%;
+    font-size: 83%;
   }
 
   thead {
