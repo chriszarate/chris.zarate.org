@@ -4,8 +4,18 @@ $body-fallback-font: 'Garamond', serif;
 $body-font: 'Alegreya', $body-fallback-font;
 
 $header-fallback-font: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-$header-level-1-font: 'Raleway', $header-fallback-font;
-$header-level-2-font: 'Lato', $header-fallback-font;
+$header-level-1-font: 'Overpass', $header-fallback-font;
+$header-level-2-font: 'Overpass', $header-fallback-font;
 
 $monospace-fallback-font: monospace;
 $monospace-font: 'Inconsolata', $monospace-fallback-font;
+
+/* Webfont: Overpass-Bold */
+@font-face {
+  font-family: 'Overpass';
+  src: url('/assets/fonts/overpass-bold.eot');
+  src: url('/assets/fonts/overpass-bold.eot?#iefix') format('embedded-opentype'),
+       url('/assets/fonts/overpass-bold.woff') format('woff'),
+       url('/assets/fonts/overpass-bold.ttf') format('truetype'),
+       url('/assets/fonts/overpass-bold.svg#Overpass-Bold') format('svg');
+}
