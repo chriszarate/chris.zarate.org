@@ -1,7 +1,7 @@
 Options +FollowSymLinks
 
-Redirect 301 /bookmarkleter http://chriszarate.github.io/bookmarkleter
-Redirect 301 /projects/bookmarkleter http://chriszarate.github.io/bookmarkleter
+Redirect 301 /bookmarkleter https://chriszarate.github.io/bookmarkleter/
+Redirect 301 /projects/bookmarkleter https://chriszarate.github.io/bookmarkleter/
 
 Redirect 301 /cinch https://github.com/chriszarate/cinch
 Redirect 301 /dyndns https://github.com/chriszarate/dyndns
