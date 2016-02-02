@@ -1,0 +1,12 @@
+{
+  "browserSync": {
+    "notify": true,
+    "server": {
+      "baseDir": "public",
+      "index": "index.html",
+      "routes": {
+        "/": "public"
+      }
+    }
+  }
+}
