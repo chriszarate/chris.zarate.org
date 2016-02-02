@@ -1,58 +1,84 @@
-/* Header */
+// Header
+
+$icon-inactive-color: #bbb;
+$icon-flickr-color: #f08;
+$icon-github-color: #333;
+$icon-instagram-color: #654;
+$icon-twitter-color: #5ae;
+$icon-mail-color: #36c;
+$icon-tap-highlight-color: rgba(0, 0, 0, 0);
 
 .menu {
   position: relative;
 }
 
 .banner {
-  height: 60px;
-  overflow: hidden;
-  margin: 0.2em 0;
-  padding-left: 75px;
-  font-size: 2.5em;
-  line-height: 60px;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAADwBAMAAADMe/ShAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAeUExURUxpcSQZIdiZZdCRXc5+VkkrHOXSyNlqSz4+JzQpMRVMi58AAAABdFJOUwBA5thmAAABA0lEQVR42u3avW3CQBiAYZMJQiYAIxZIskEQA0TKBhFiAzZAKaHMtin8Udg6Wf4rfM7zdne6u6f8ZMlFIUmSJEnSsFbrLv1W3cBgMBgMXhbcTUrD9/ruMxgMBoPBy4Jfyh5twWAwGAxeCNwYseWIGk+BwWAwGJwr/BjAX8k+68I+faoxnsFgMBgMzh1+S/Z+qPWRPgUGg8FgcO5wXHqNW6eq809VLL/r8DG249A1lvHELp4Eg8FgMDh3uFH7PE7fAYPBYDA4Wzh6Kidr0+snIzAYDAaDs4EvrYHBYDAYvEz40ZhBXIwJDAaDweD5wUO+WjfFdIHBYDAYPD9YkiRJkvS/+gMsAE8/d2+JRQAAAABJRU5ErkJggg==');
-  background-size: 60px 60px;
+
+  background-image: url($image-avatar-240x240);
   background-position: 0 50%;
   background-repeat: no-repeat;
+  background-size: 60px 60px;
+  font-size: 2.5em;
+  height: 60px;
+  line-height: 60px;
+  margin: 0.2em 0;
+  overflow: hidden;
+  padding-left: 75px;
+
+  @include breakpoint(md) {
+    background-position: 50% 0;
+    font-size: 2em;
+    padding: 60px 0 0 0;
+    text-align: center;
+  }
+
 }
 
 
-/* Elsewhere */
+// Elsewhere
 
 .elsewhere {
-  position: absolute;
-  top: 20px;
-  right: 0;
+
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
+  position: absolute;
+  right: 0;
+  -webkit-tap-highlight-color: $icon-tap-highlight-color;
   text-align: right;
-  /* Prevents flickering text on transform transition */
-  -webkit-transform: translate3d(0, 0, 0);
-  /* Prevents tap highlight on iOS */
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  top: 20px;
+  transform: translate3d(0, 0, 0);
+
+  @include breakpoint(md) {
+    position: static;
+    text-align: center;
+  }
+
 }
 
 .service {
   display: inline-block;
-  position: relative;
   margin: 0;
+  position: relative;
 }
 
 .link {
 
+  color: $icon-inactive-color;
   display: inline-block;
-  overflow: hidden;
-  width: 50px;
-  color: #bbb;
   font-size: 1.5em;
+  overflow: hidden;
   text-align: center;
   text-decoration: none;
   transition: all 0.15s ease-in-out;
   transition-property: color, -webkit-transform, transform;
+  width: 50px;
 
-  &:before {
+  @include breakpoint(md) {
+    width: 40px;
+  }
+
+  &::before {
     padding-right: 0;
   }
 
@@ -62,65 +88,62 @@
 
 }
 
+.username {
+  color: $icon-inactive-color;
+  font-size: 0.9em;
+  left: 50%;
+  line-height: 0.9em;
+  margin: 35px 0 0 -65px;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  transition: opacity 0.15s ease-in-out;
+  width: 130px;
+}
+
 .no-touch {
+
   .link {
     &:hover {
-      -webkit-transform: scale(1.2, 1.2);
       transform: scale(1.2, 1.2);
     }
   }
-}
-
-.username {
-  position: absolute;
-  width: 130px;
-  left: 50%;
-  margin: 35px 0 0 -65px;
-  color: #bbb;
-  opacity: 0;
-  font-size: 0.9em;
-  line-height: 0.9em;
-  text-align: center;
-  transition: opacity 0.15s ease-in-out;
-}
-
-.no-touch {
 
   .service:hover {
+
     .username {
       opacity: 1;
     }
-  }
 
-  .service:hover {
     .username:hover {
       opacity: 0;
     }
+
   }
 
   .icon-mail:hover {
-    color: #36c;
+    color: $icon-mail-color;
   }
 
   .icon-github-1:hover {
-    color: #333;
+    color: $icon-github-color;
   }
 
   .icon-flickr-1:hover {
-    color: #f08;
+    color: $icon-flickr-color;
   }
 
   .icon-twitter-1:hover {
-    color: #5ae;
+    color: $icon-twitter-color;
   }
 
   .icon-instagram:hover {
-    color: #654;
+    color: $icon-instagram-color;
   }
 
 }
 
-.inline-link:before {
+.inline-link::before {
   padding-left: 0.2em;
   padding-right: 0.3em;
   text-decoration: none;

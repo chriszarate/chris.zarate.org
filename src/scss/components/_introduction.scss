@@ -1,14 +1,18 @@
-/* Introduction */
+// Introduction
 
 .introduction {
-  margin: 2em 0;
   font-size: 1.2em;
+  margin: 2em 0;
 }
 
 .bullets {
 
   margin: 1em 1.5em;
   padding: 0;
+
+  @include breakpoint(md) {
+    margin: 1em 0.75em 1em 1.25em;
+  }
 
   li {
     margin: 0.25em 0;

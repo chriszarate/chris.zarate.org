@@ -1,0 +1,28 @@
+// Print styles
+
+@media print {
+
+  @page {
+    margin: 0;
+    padding: 0.75in 0.5in;
+    size: 8.5in 11in;
+  }
+
+  @page:first {
+    padding: 0.5in 0.5in;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+}

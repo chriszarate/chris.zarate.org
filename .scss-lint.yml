@@ -1,0 +1,11 @@
+exclude: 'src/scss/vendor/**'
+linters:
+  IdSelector:
+    enabled: false
+  LeadingZero:
+    enabled: true
+    style: include_zero
+  PlaceholderInExtend:
+    enabled: false
+  Shorthand:
+    enabled: false

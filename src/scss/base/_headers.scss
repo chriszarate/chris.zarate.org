@@ -1,4 +1,18 @@
-/* Headers */
+// Headers
+
+h1,
+h2,
+h3,
+h4,
+.section-head,
+.sub-section-head {
+  @include breakpoint(print) {
+    orphans: 3;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    widows: 3;
+  }
+}
 
 h1 {
   font-family: $header-level-1-font;

@@ -1,0 +1,17 @@
+// Media queries
+
+@mixin breakpoint($class) {
+
+  @if $class == md {
+    @media only screen and (max-width: 700px) {
+      @content;
+    }
+  } @else if $class == print {
+    @media print {
+      @content;
+    }
+  } @else {
+    @warn 'Breakpoint mixin supports: md, print';
+  }
+
+}

@@ -1,6 +1,7 @@
-/* Body */
+// Body
 
 body {
+
   background-color: $page-background-color;
   color: $page-text-color;
   font-family: $body-font;
@@ -9,4 +10,14 @@ body {
   margin: 0 auto;
   max-width: 1024px;
   padding: 2em;
+
+  @include breakpoint(md) {
+    font-size: 1em;
+    padding: 1em;
+  }
+
+  @include breakpoint(print) {
+    font-size: 83%;
+  }
+
 }

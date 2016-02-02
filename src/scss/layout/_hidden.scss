@@ -1,5 +1,11 @@
-/* Hidden */
+// Hidden
 
 .print-only {
+
   display: none;
+
+  @include breakpoint(print) {
+    display: block;
+  }
+
 }

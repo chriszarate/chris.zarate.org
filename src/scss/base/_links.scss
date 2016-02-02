@@ -1,8 +1,12 @@
-/* Links */
+// Links
 
 a {
 
   color: $page-link-color;
+
+  @include breakpoint(md) {
+    word-wrap: break-word;
+  }
 
   &:hover {
     color: $page-link-hover-color;
