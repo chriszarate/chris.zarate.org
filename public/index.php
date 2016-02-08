@@ -22,74 +22,45 @@
 
     <title>Chris Zarate</title>
 
-    <!-- Bundled CSS -->
-    <link rel="stylesheet" href="build/app.min.css">
-
-    <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Karla:400,700">
+    <link rel="stylesheet" href="/build/main.css">
 
   </head>
 
-  <body class="no-touch">
+  <body class="no-touch page-home">
 
-    <header class="menu">
+    <nav class="masthead">
 
-      <h1 class="banner"><span>Chris Zarate</span></h1>
+      <span class="bubble bubble-red"></span>
+      <span class="bubble bubble-yellow"></span>
+      <span class="bubble bubble-green"></span>
 
-      <ul class="elsewhere">
-        <li class="service">
-          <h4 class="username">&#099;&#104;&#114;&#105;&#115;&#064;&#122;&#097;&#114;&#097;&#116;&#101;&#046;&#111;&#114;&#103;</h4>
-          <a class="link icon-mail" href="mailto:&#099;&#104;&#114;&#105;&#115;&#064;&#122;&#097;&#114;&#097;&#116;&#101;&#046;&#111;&#114;&#103;"><span>E-mail</span></a>
-        </li>
-        <li class="service">
-          <h4 class="username">chriszarate</h4>
-          <a class="link icon-github-1" href="https://github.com/chriszarate"><span>Github</span></a>
-        </li>
-        <li class="service">
-          <h4 class="username">chriszarate</h4>
-          <a class="link icon-flickr-1" href="http://flickr.com/photos/chriszarate"><span>Flickr</span></a>
-        </li>
-        <li class="service">
-          <h4 class="username">chrzrt</h4>
-          <a class="link icon-twitter-1" href="http://twitter.com/chrzrt"><span>Twitter</span></a>
-        </li>
-        <li class="service">
-          <h4 class="username">chrzrt</h4>
-          <a class="link icon-instagram" href="http://instagram.com/chrzrt"><span>Instagram</span></a>
-        </li>
-      </ul>
+      <a class="tab tab-home tab-active" href="#">Chris Zarate</a>
+      <a class="tab tab-photos" href="#photos"><span class="icon icon-camera">Recent photos</span></a>
 
-    </header>
+    </nav>
 
-    <div class="introduction">
+    <main class="content">
 
-      <p>I make things for me and for the Web. Here are a few things I made recently:</p>
+      <div class="introduction">
+        <p>My name is Chris and I <a class="inline-link icon-github-1" href="https://github.com/chriszarate">make things</a> for me and for the Web. I take <a class="inline-link icon-flickr-1" href="http://flickr.com/photos/chriszarate">photos</a> and <a class="inline-link icon-instagram" href="http://instagram.com/chrzrt">latergrams</a>. I <a class="inline-link icon-twitter-1" href="http://twitter.com/chrzrt">never tweet</a>. E-mail me at <a class="inline-link icon-mail" href="mailto:&#099;&#104;&#114;&#105;&#115;&#064;&#122;&#097;&#114;&#097;&#116;&#101;&#046;&#111;&#114;&#103;">&#099;&#104;&#114;&#105;&#115;&#064;&#122;&#097;&#114;&#097;&#116;&#101;&#046;&#111;&#114;&#103;</a>.</p>
+      </div>
 
-      <ul class="bullets">
-        <li><a href="http://tilde.club/~zarate">tilde.club/~zarate</a> –  a Web page on a UNIX computer</li>
-        <li><a href="http://maryhelenspecht.com">maryhelenspecht.com</a> – a site for author Mary Helen Specht</li>
-        <li><a href="http://bikeshare.me">bikeshare.me</a> – a <em>fast</em> glance at your favorite bike share stations</li>
-        <li><a href="https://github.com/chriszarate/grunt-load-options">grunt-load-options</a> – a Grunt plugin to modularize your Gruntfile</li>
-        <li><a href="http://chriszarate.github.io/sheetrock/">jquery.sheetrock</a> – quickly connect to, query, and lazy-load data from Google Spreadsheets</li>
-        <li><a href="http://supergenpass.com">supergenpass</a> – a bookmarklet password generator</li>
-      </ul>
-
-    </div>
-
-    <div class="main">
-
-      <h3 class="photos-head icon-camera">Some recent photos</h3>
+      <div class="photos">
 
 <?php for ( $i = 0; $i < count($flickr_data); $i++): ?>
-      <div class="photo">
-        <p><a href="http://www.flickr.com/photos/<?= $flickr_data[$i]['ownername'] ?>/<?= $flickr_data[$i]['id'] ?>/"><img src="<?= $flickr_data[$i]['url_l'] ?>" alt="<?= $flickr_data[$i]['title'] ?>"></a></p>
-      </div>
+        <div class="photo">
+          <p><a href="http://www.flickr.com/photos/<?= $flickr_data[$i]['ownername'] ?>/<?= $flickr_data[$i]['id'] ?>/"><img src="<?= $flickr_data[$i]['url_l'] ?>" alt="<?= $flickr_data[$i]['title'] ?>"></a></p>
+        </div>
 <?php endfor; ?>
 
-    </div>
+        <p>See more at <a class="inline-link icon-flickr-1" href="http://flickr.com/photos/chriszarate">Flickr</a> and <a class="inline-link icon-instagram" href="http://instagram.com/chrzrt">Instagram</a>.</p>
 
-    <p>See more at <a class="inline-link icon-flickr-1" href="http://flickr.com/photos/chriszarate">Flickr</a> and <a class="inline-link icon-instagram" href="http://instagram.com/chrzrt">Instagram</a>.</p>
+      </div>
+
+    </main>
+
+    <script src="/build/main.js"></script>
 
   </body>
 

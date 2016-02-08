@@ -1,0 +1,18 @@
+// Inline links
+
+.inline-link {
+
+  background-color: $white;
+  border: solid 1px $page-link-color;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 0 3px;
+  padding: 3px 8px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $page-link-color;
+    color: $white;
+  }
+
+}

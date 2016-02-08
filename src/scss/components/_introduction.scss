@@ -1,21 +1,35 @@
 // Introduction
 
 .introduction {
-  font-size: 1.2em;
-  margin: 2em 0;
+
+  background-color: $lightest-grey;
+  color: $darkest-grey;
+  display: none;
+  left: 50%;
+  padding: 2em;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+
+  @include breakpoint(lg) {
+    background-color: $white;
+    min-width: 280px;
+    padding: 20px;
+    width: 80%;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .inline-link {
+    margin: 5px 0;
+    padding: 0 8px;
+  }
+
 }
 
-.bullets {
-
-  margin: 1em 1.5em;
-  padding: 0;
-
-  @include breakpoint(md) {
-    margin: 1em 0.75em 1em 1.25em;
-  }
-
-  li {
-    margin: 0.25em 0;
-  }
-
+.page-home .introduction {
+  display: block;
 }

@@ -1,5 +1,23 @@
 // Sections
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.content {
+  bottom: 0;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  position: absolute;
+  top: 76px;
+  transform-style: preserve-3d;
+  width: 100%;
+}
+
 .section-head {
   margin-top: 1.5em;
 }

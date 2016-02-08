@@ -7,14 +7,8 @@ body {
   font-family: $body-font;
   font-size: 1.1em;
   line-height: 1.5em;
-  margin: 0 auto;
-  max-width: 1024px;
-  padding: 2em;
-
-  @include breakpoint(md) {
-    font-size: 1em;
-    padding: 1em;
-  }
+  margin: 0;
+  padding: 0;
 
   @include breakpoint(print) {
     font-size: 83%;

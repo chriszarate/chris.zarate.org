@@ -1,11 +1,13 @@
 // Fonts
 
-$body-fallback-font: 'Garamond', serif;
-$body-font: 'Alegreya', $body-fallback-font;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$body-fallback-font: 'Verdana', serif;
+$body-font: $body-fallback-font;
 
 $header-fallback-font: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-$header-level-1-font: 'Overpass', $header-fallback-font;
-$header-level-2-font: 'Overpass', $header-fallback-font;
+$header-font: 'Karla', $header-fallback-font;
 
 $monospace-fallback-font: monospace;
-$monospace-font: 'Inconsolata', $monospace-fallback-font;
+$monospace-font: $monospace-fallback-font;

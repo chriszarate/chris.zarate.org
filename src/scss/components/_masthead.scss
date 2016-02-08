@@ -1,0 +1,149 @@
+// Masthead
+
+$bubble-red: #f33;
+$bubble-yellow: #fc3;
+$bubble-green: #3f3;
+
+$grey-border-color: #555;
+
+.masthead {
+
+  background-color: $dark-grey;
+  border-bottom: solid 2px $white;
+  height: 76px;
+  left: 0;
+  line-height: 76px;
+  overflow: hidden;
+  padding: 0 10px 0 20px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  @include breakpoint(md) {
+    padding-left: 10px;
+  }
+
+}
+
+.bubble {
+
+  background-color: $darkest-grey;
+  border: solid 1px $black;
+  border-radius: 14px;
+  display: inline-block;
+  height: 24px;
+  margin-bottom: 20px;
+  margin-right: 6px;
+  transition: background-color 0.1s ease-in, border-color 0.1s ease-in;
+  vertical-align: bottom;
+  width: 24px;
+
+  @include breakpoint(lg) {
+    display: none;
+  }
+
+}
+
+.scrolling {
+
+  .bubble-yellow {
+    background-color: $bubble-yellow;
+    border-color: darken($bubble-yellow, 30%);
+  }
+
+}
+
+.clicking {
+
+  .bubble-green {
+    background-color: $bubble-green;
+    border-color: darken($bubble-green, 30%);
+  }
+
+}
+
+.tab {
+
+  background-color: $light-grey;
+  border-radius: 12px 12px 0 0;
+  border-top: solid 1px $grey-border-color;
+  color: $darkest-grey;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $header-font;
+  font-size: 24px;
+  font-weight: $font-weight-normal;
+  height: 56px;
+  line-height: 60px;
+  margin: 0 0 0 10px;
+  padding: 0;
+  position: relative;
+  text-decoration: none;
+  text-indent: 16px;
+  vertical-align: bottom;
+  width: 280px;
+  z-index: 110;
+
+  @include breakpoint(md) {
+    width: 250px;
+  }
+
+  &::before {
+    border-bottom: 56px solid $light-grey;
+    border-left: 20px solid transparent;
+    border-radius: 0 12px 0 0;
+    content: '';
+    display: inline-block;
+    height: 0;
+    left: -17px;
+    position: absolute;
+    width: 0;
+  }
+
+  &::after {
+    border-bottom: 56px solid $light-grey;
+    border-radius: 12px 0 0 0;
+    border-right: 20px solid transparent;
+    content: '';
+    display: inline-block;
+    height: 0;
+    position: absolute;
+    right: -17px;
+    width: 0;
+  }
+
+  &:hover {
+    color: $darkest-grey;
+  }
+
+  .icon::before {
+    display: inline;
+  }
+
+}
+
+.tab-active {
+
+  background-color: $white;
+  cursor: default;
+  z-index: 120;
+
+  &::before {
+    border-bottom: 56px solid $white;
+  }
+
+  &::after {
+    border-bottom-color: $white;
+  }
+
+}
+
+.tab-home {
+  background-image: url($image-avatar-240x240);
+  background-position: 8px 6px;
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  margin-left: 24px;
+  text-indent: 64px;
+}

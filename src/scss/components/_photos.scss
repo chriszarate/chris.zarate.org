@@ -1,20 +1,24 @@
 // Photos
 
-.main {
-  position: relative;
-}
+.photos {
 
-.photos-head {
+  display: none;
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 2em;
 
-  font-size: 1.5em;
-  margin: 2.5em 0 1em 0;
-  padding-bottom: 0.25em;
-
-  @include breakpoint(md) {
-    font-size: 1.25em;
-    margin-bottom: 0.5em;
+  @include breakpoint(lg) {
+    padding: 1em;
   }
 
+  @include breakpoint(md) {
+    padding: 1em 0;
+  }
+
+}
+
+.page-photos .photos {
+  display: block;
 }
 
 .photo {
