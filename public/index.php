@@ -1,17 +1,3 @@
-<?php
-
-# Config
-  $flickr_cache_file = 'cache/blog.txt';
-  $flickr_max_cache_age = 86400;
-
-# Get photos
-  if ( file_exists ( $flickr_cache_file ) && time () - filemtime ( $flickr_cache_file ) < $flickr_max_cache_age ):
-    $flickr_data = unserialize ( file_get_contents ( $flickr_cache_file ) );
-  else:
-    require ( 'blog.php' );
-  endif;
-
-?>
 <!DOCTYPE html>
 <html class="no-js">
 
@@ -47,17 +33,9 @@
       </div>
 
       <div class="photos">
-
-<?php for ( $i = 0; $i < count($flickr_data); $i++): ?>
-        <div class="photo">
-          <p><a href="http://www.flickr.com/photos/<?= $flickr_data[$i]['ownername'] ?>/<?= $flickr_data[$i]['id'] ?>/"><img src="<?= $flickr_data[$i]['url_l'] ?>" alt="<?= $flickr_data[$i]['title'] ?>"></a></p>
-        </div>
-<?php endfor; ?>
-
+        <div id="photos"></div>
         <p>See more at <a class="inline-link icon-flickr-1" href="http://flickr.com/photos/chriszarate">Flickr</a> and <a class="inline-link icon-instagram" href="http://instagram.com/chrzrt">Instagram</a>.</p>
-
       </div>
-
     </main>
 
     <script src="/build/main.js"></script>
