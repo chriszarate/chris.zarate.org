@@ -9,4 +9,4 @@ Redirect 301 /flickr-set https://github.com/chriszarate/flickr-wormhole
 Redirect 301 /reader-lite https://github.com/chriszarate/reader-lite
 Redirect 301 /sort https://gist.github.com/chriszarate/2896301
 
-ErrorDocument 404 /index.php
+ErrorDocument 404 /index.html
