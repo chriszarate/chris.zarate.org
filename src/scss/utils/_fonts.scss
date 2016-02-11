@@ -3,8 +3,8 @@
 $font-weight-normal: 400;
 $font-weight-bold: 700;
 
-$body-fallback-font: 'Verdana', serif;
-$body-font: $body-fallback-font;
+$body-fallback-font: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$body-font: 'Karla', $body-fallback-font;
 
 $header-fallback-font: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 $header-font: 'Karla', $header-fallback-font;
