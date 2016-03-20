@@ -1,0 +1,39 @@
+// Résumé
+
+.resume {
+  height: auto;
+  margin: 0 auto;
+  max-width: 770px;
+  padding: 2em 15px;
+  width: auto;
+}
+
+.section-head {
+  margin-top: 1.5em;
+}
+
+.single-head {
+  margin-bottom: 0.75em;
+}
+
+.sub-section-head {
+
+  margin-top: 0.5em;
+
+  h3 {
+    font-family: $body-font;
+    font-weight: 700;
+  }
+
+}
+
+.note-links {
+
+  margin: 1em 0;
+
+  p {
+    margin: 0.1em 0;
+    padding: 0;
+  }
+
+}

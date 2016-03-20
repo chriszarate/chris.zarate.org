@@ -15,17 +15,18 @@
 @import 'base/links';
 
 // Layout
-@import 'layout/flex-box';
 @import 'layout/hidden';
-@import 'layout/pages';
 @import 'layout/sections';
+
+// Pages
+@import 'pages/hire';
+@import 'pages/home';
+@import 'pages/photos';
 
 // Components
 @import 'components/callouts';
 @import 'components/contact';
 @import 'components/inline-links';
-@import 'components/introduction';
 @import 'components/masthead';
 @import 'components/notices';
-@import 'components/photos';
 @import 'components/skills';
