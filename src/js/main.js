@@ -1,6 +1,7 @@
 'use strict';
 
 require('./modules/user-agent.js');
+require('./modules/fake-blog.js');
 require('./modules/masthead.js');
 require('./modules/photos.js');
 

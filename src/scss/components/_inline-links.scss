@@ -2,17 +2,32 @@
 
 .inline-link {
 
-  background-color: $white;
-  border: solid 1px $page-link-color;
+  background-color: $lightest-grey;
   border-radius: 10px;
+  color: $darkest-grey;
   display: inline-block;
   margin: 0 3px;
   padding: 3px 8px;
   text-decoration: none;
 
   &:hover {
-    background-color: $page-link-color;
+    background-color: $darkest-grey;
     color: $white;
   }
 
+  &.icon-flickr-1:hover {
+    background-color: #f08;
+  }
+
+  &.icon-instagram:hover {
+    background-color: #965;
+  }
+
+  &.icon-mail:hover {
+    background-color: #396;
+  }
+
+  &.icon-twitter-1:hover {
+    background-color: #49f;
+  }
 }

@@ -2,7 +2,11 @@
 
 @mixin breakpoint($class) {
 
-  @if $class == lg {
+  @if $class == xl {
+    @media only screen and (max-width: 900px) {
+      @content;
+    }
+  } @else if $class == lg {
     @media only screen and (max-width: 768px) {
       @content;
     }
@@ -15,7 +19,7 @@
       @content;
     }
   } @else {
-    @warn 'Breakpoint mixin supports: md, print';
+    @warn 'Breakpoint mixin supports: xl, lg, md, print';
   }
 
 }

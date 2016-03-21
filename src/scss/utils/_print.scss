@@ -3,12 +3,12 @@
 @media print {
 
   @page {
-    margin: 0.75in 0.5in;
+    margin: 0.5in;
     size: 8.5in 11in;
   }
 
   @page:first {
-    margin: 0.5in;
+    margin-top: 0.25in;
   }
 
   thead {

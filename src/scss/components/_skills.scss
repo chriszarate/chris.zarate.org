@@ -2,6 +2,9 @@
 
 .collapsed {
 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   font-family: $monospace-font;
   list-style: none;
   margin: 0;

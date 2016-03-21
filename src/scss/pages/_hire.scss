@@ -8,8 +8,31 @@
   width: auto;
 }
 
+.resume-header,
+.section-head,
+.sub-section-head {
+  align-items: baseline;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  h3 {
+    margin: 0 0 0.25em 0;
+    padding-right: 0.75em;
+  }
+
+  h4 {
+    margin: 0;
+  }
+}
+
+.resume-header {
+  align-items: center;
+}
+
 .section-head {
-  margin-top: 1.5em;
+  margin: 1.5em 0 0.5em 0;
 }
 
 .single-head {
@@ -18,7 +41,7 @@
 
 .sub-section-head {
 
-  margin-top: 0.5em;
+  margin: 0.5em 0;
 
   h3 {
     font-family: $body-font;
@@ -36,4 +59,12 @@
     padding: 0;
   }
 
+}
+
+.home-link {
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
 }
