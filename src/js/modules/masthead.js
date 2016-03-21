@@ -18,7 +18,11 @@ var showScrollingIndicator = function () {
 
   scrollTimeout = setTimeout(function () {
     scrollTimeout = 0;
+    dom.addClass('.masthead', 'stopped');
     dom.removeClass('.masthead', 'scrolling');
+    setTimeout(function () {
+      dom.removeClass('.masthead', 'stopped');
+    }, 500);
   }, 50);
 
 };

@@ -63,6 +63,15 @@ $grey-border-color: #555;
 
 }
 
+.stopped {
+
+  .bubble-red {
+    background-color: $bubble-red;
+    border-color: darken($bubble-red, 30%);
+  }
+
+}
+
 .tab {
 
   background-color: $light-grey;
