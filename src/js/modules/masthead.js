@@ -56,5 +56,12 @@ window.onhashchange = function () {
   }
 };
 
+// Scroll to top of page (.content) whenever a tab is clicked.
+Array.prototype.forEach.call(dom.select('.tab'), function (tab) {
+  tab.addEventListener('click', function () {
+    dom.select('.content', 0).scrollTop = 0;
+  }, false);
+});
+
 // Always trigger hashchange.
 window.dispatchEvent(new Event('hashchange'));
