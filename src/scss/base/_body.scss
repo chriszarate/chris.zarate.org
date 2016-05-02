@@ -1,7 +1,11 @@
 // Body
 
+html,
 body {
+  height: 100%;
+}
 
+body {
   background-color: $page-background-color;
   color: $page-text-color;
   font-family: $body-font;
@@ -9,9 +13,4 @@ body {
   line-height: 1.5em;
   margin: 0;
   padding: 0;
-
-  @include breakpoint(print) {
-    font-size: 83%;
-  }
-
 }

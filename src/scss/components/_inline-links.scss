@@ -1,33 +1,47 @@
 // Inline links
 
-.inline-link {
+$flickr-color: #f08;
+$instagram-color: #743;
+$twitter-color: #063;
+$mail-color: #49f;
 
-  background-color: $lightest-grey;
-  border-radius: 10px;
-  color: $darkest-grey;
-  display: inline-block;
-  margin: 0 3px;
-  padding: 3px 8px;
+.inline-link {
+  color: $page-text-color;
+  margin: 0 2px;
+  opacity: 0.9;
   text-decoration: none;
+  white-space: nowrap;
+
+  &::before {
+    opacity: 0.8;
+    padding-right: 6px;
+    text-decoration: none;
+  }
 
   &:hover {
-    background-color: $darkest-grey;
-    color: $white;
-  }
+    color: $black;
+    opacity: 1;
+    text-decoration: underline;
 
-  &.icon-flickr-1:hover {
-    background-color: #f08;
-  }
+    &::before {
+      opacity: 1;
+      text-decoration: none;
+    }
 
-  &.icon-instagram:hover {
-    background-color: #965;
-  }
+    &.icon-flickr-1 {
+      color: $flickr-color;
+    }
 
-  &.icon-mail:hover {
-    background-color: #396;
-  }
+    &.icon-instagram {
+      color: $instagram-color;
+    }
 
-  &.icon-twitter-1:hover {
-    background-color: #49f;
+    &.icon-mail {
+      color: $twitter-color;
+    }
+
+    &.icon-twitter-1 {
+      color: $mail-color;
+    }
   }
 }

@@ -1,158 +1,57 @@
 // Masthead
 
-$bubble-red: #f33;
-$bubble-yellow: #fc3;
-$bubble-green: #3f3;
-
-$grey-border-color: #555;
-
 .masthead {
-
-  background-color: $dark-grey;
-  border-bottom: solid 2px $white;
-  height: 76px;
+  background-color: $page-background-color;
   left: 0;
-  line-height: 76px;
-  overflow: hidden;
-  padding: 0 10px 0 20px;
-  position: fixed;
+  padding: 1em 2em;
+  position: absolute;
   right: 0;
   top: 0;
-  z-index: 100;
+  z-index: 10;
+
+  h1 {
+    font-size: 1.4em;
+    line-height: 1em;
+    margin-right: 15px;
+    text-align: center;
+
+    @include breakpoint(md) {
+      display: inline;
+      float: left;
+    }
+
+    &::before {
+      background-image: url($image-avatar-240x240);
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: 48px 48px;
+      content: '';
+      display: inline-block;
+      height: 48px;
+      margin-right: 10px;
+      vertical-align: middle;
+      width: 48px;
+    }
+  }
+}
+
+.social-links {
+  margin: 0;
+  padding: 17px 0 0 0;
+  text-align: center;
 
   @include breakpoint(md) {
-    padding-left: 10px;
+    text-align: right;
   }
 
-}
+  li {
+    display: block;
+    line-height: 0.9em;
+    margin: 0 6px;
+    padding: 5px 0;
 
-.bubble {
-
-  background-color: $darkest-grey;
-  border: solid 1px $black;
-  border-radius: 14px;
-  display: inline-block;
-  height: 24px;
-  margin-bottom: 20px;
-  margin-right: 6px;
-  transition: background-color 0.1s ease-in, border-color 0.1s ease-in;
-  vertical-align: bottom;
-  width: 24px;
-
-  @include breakpoint(lg) {
-    display: none;
+    @include breakpoint(md) {
+      display: inline-block;
+    }
   }
-
-}
-
-.scrolling {
-
-  .bubble-yellow {
-    background-color: $bubble-yellow;
-    border-color: darken($bubble-yellow, 30%);
-  }
-
-}
-
-.clicking {
-
-  .bubble-green {
-    background-color: $bubble-green;
-    border-color: darken($bubble-green, 30%);
-  }
-
-}
-
-.stopped {
-
-  .bubble-red {
-    background-color: $bubble-red;
-    border-color: darken($bubble-red, 30%);
-  }
-
-}
-
-.tab {
-
-  background-color: $light-grey;
-  border-radius: 12px 12px 0 0;
-  border-top: solid 1px $grey-border-color;
-  color: $darkest-grey;
-  cursor: pointer;
-  display: inline-block;
-  font-family: $header-font;
-  font-size: 24px;
-  font-weight: $font-weight-normal;
-  height: 56px;
-  line-height: 60px;
-  margin: 0 0 0 10px;
-  padding: 0;
-  position: relative;
-  text-decoration: none;
-  text-indent: 16px;
-  vertical-align: bottom;
-  width: 280px;
-  z-index: 110;
-
-  @include breakpoint(md) {
-    width: 250px;
-  }
-
-  &::before {
-    border-bottom: 56px solid $light-grey;
-    border-left: 20px solid transparent;
-    border-radius: 0 12px 0 0;
-    content: '';
-    display: inline-block;
-    height: 0;
-    left: -17px;
-    position: absolute;
-    width: 0;
-  }
-
-  &::after {
-    border-bottom: 56px solid $light-grey;
-    border-radius: 12px 0 0 0;
-    border-right: 20px solid transparent;
-    content: '';
-    display: inline-block;
-    height: 0;
-    position: absolute;
-    right: -17px;
-    width: 0;
-  }
-
-  &:hover {
-    color: $darkest-grey;
-  }
-
-  .icon::before {
-    display: inline;
-  }
-
-}
-
-.tab-active {
-
-  background-color: $white;
-  cursor: default;
-  z-index: 120;
-
-  &::before {
-    border-bottom: 56px solid $white;
-  }
-
-  &::after {
-    border-bottom-color: $white;
-  }
-
-}
-
-.tab-home {
-  background-image: url($image-avatar-240x240);
-  background-position: 8px 6px;
-  background-repeat: no-repeat;
-  background-size: 48px 48px;
-  margin-left: 24px;
-  text-indent: 64px;
 }

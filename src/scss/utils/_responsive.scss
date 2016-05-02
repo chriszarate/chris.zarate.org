@@ -3,15 +3,15 @@
 @mixin breakpoint($class) {
 
   @if $class == xl {
-    @media only screen and (max-width: 900px) {
+    @media only screen and (min-width: 900px) {
       @content;
     }
   } @else if $class == lg {
-    @media only screen and (max-width: 768px) {
+    @media only screen and (min-width: 768px) {
       @content;
     }
   } @else if $class == md {
-    @media only screen and (max-width: 700px) {
+    @media only screen and (min-width: 575px) {
       @content;
     }
   } @else if $class == print {
