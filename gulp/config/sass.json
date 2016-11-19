@@ -1,6 +1,0 @@
-{
-  "sassConfig": {},
-  "autoprefix": "last 2 versions",
-  "source": "src/scss/main.scss",
-  "target": "public/build/"
-}
