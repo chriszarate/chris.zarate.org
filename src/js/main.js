@@ -7,9 +7,6 @@ const canvas = document.createElement('canvas');
 const context = canvas.getContext('2d');
 const aspectRatio = 2000 / 820;
 
-let canvasH;
-let canvasW;
-
 let image = document.querySelector('.glitch-image');
 let currentImage = 0;
 
@@ -27,9 +24,9 @@ function random(floor, ceiling) {
 }
 
 function clear() {
-  context.rect(0, 0, canvasW, canvasH);
+  context.rect(0, 0, canvas.width, canvas.height);
   context.fill();
-  context.drawImage(image, 0, 0, image.width, image.height, 0, 0, canvasW, canvasH);
+  context.drawImage(image, 0, 0, image.width, image.height, 0, 0, canvas.width, canvas.height);
 }
 
 // glitmage by Miguel Mota
@@ -39,14 +36,14 @@ function glitch() {
   let i = 0;
 
   for (i = 0; i < random(1, 4); i += 1) {
-    const x = Math.random() * canvasW;
-    const y = Math.random() * canvasH;
-    const spliceW = canvasW - x;
-    const spliceH = canvasH / random(2, 10);
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height;
+    const spliceW = canvas.width - x;
+    const spliceH = canvas.height / random(2, 10);
 
     context.save();
     context.scale(-1, 1);
-    context.drawImage(canvas, 0, y, canvasW, spliceH, 0, y, canvasW * -1, spliceH);
+    context.drawImage(canvas, 0, y, canvas.width, spliceH, 0, y, canvas.width * -1, spliceH);
     context.restore();
     context.drawImage(canvas, 0, y, spliceW, spliceH, x, spliceH, spliceW, spliceH);
   }
@@ -60,7 +57,7 @@ function glatch() {
     amount: random(0, 50),
     iterations: random(0, 20),
   };
-  const imageData = context.getImageData(0, 0, canvasW, canvasH);
+  const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
 
   glitchCanvas(glitchParams)
     .fromImageData(imageData)
@@ -114,8 +111,8 @@ function twatch() {
 }
 
 function setDimensions() {
-  canvas.height = canvasH = document.body.offsetWidth / aspectRatio;
-  canvas.width = canvasW = document.body.offsetWidth;
+  canvas.height = document.body.offsetWidth / aspectRatio;
+  canvas.width = document.body.offsetWidth;
 }
 
 image.onload = () => {
