@@ -1,40 +1,136 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html>
 
-  <head>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Chris Zarate</title>
 
-    <title>Chris Zarate</title>
+		<style>
+			/*
 
-    <link rel="stylesheet" href="https://brick.a.ssl.fastly.net/Fira+Sans:400,500">
-    <link rel="stylesheet" href="/build/main.css">
+				╔═════════╗
+				║ C S S   ║
+				║ I S     ║
+				║ A W E S O M E
+				╚═════════╝
 
-  </head>
+			*/
 
-  <body class="no-touch page-home">
+			html {
+				line-height: 1.6em; /* Getting old. */
+				margin: 0 1em;      /* Mobile first! */
+			}
 
-    <nav class="masthead">
+			body {
+				font-family: serif; /* Fight me. */
+				font-size: 1.2em;
+				margin: 3em auto;
+				max-width: 45rem;
+			}
 
-      <h1>Chris Zarate</h1>
+			/* I honestly almost stopped here, and I kinda regret everything below. */
+			a {
+				color: #00c;
+			}
 
-      <ul class="social-links">
-        <li><a class="inline-link icon-github-1" href="https://github.com/chriszarate">web things</a></li>
-        <li><a class="inline-link icon-flickr-1" href="https://flickr.com/photos/chriszarate">photos</a></li>
-        <li><a class="inline-link icon-instagram" href="https://instagram.com/chrzrt">latergrams</a></li>
-        <li><a class="inline-link icon-twitter-1" href="https://twitter.com/chrzrt">never tweet</a></li>
-        <li><a class="inline-link icon-mail" href="mailto:&#099;&#104;&#114;&#105;&#115;&#064;&#122;&#097;&#114;&#097;&#116;&#101;&#046;&#111;&#114;&#103;">&#099;&#104;&#114;&#105;&#115;&#064;&#122;&#097;&#114;&#097;&#116;&#101;&#046;&#111;&#114;&#103;</a></li>
-      </ul>
+			article {
+				margin: 6em 0;
+			}
 
-    </nav>
+			h1 {
+				font-size: 6rem;
+				font-style: italic;
+				text-transform: lowercase;
+			}
 
-    <div class="glitch-container">
-      <img class="glitch-image" src="/assets/images/bagan.jpg">
-    </div>
+			h1 span {
+				color: transparent;
+				letter-spacing: -1em;
+			}
 
-    <script src="/build/main.js"></script>
+			h1::after {
+				content: '✍';
+				display: inline-block;
+				font-size: 7rem;
+				transform: translate(-10px, 2px);
+			}
 
-  </body>
+			h2 {
+				font-size: 1em;
+				margin: 2em 0;
+			}
+
+			h3 {
+				font-size: 2rem;
+			}
+
+			h5 {
+				font-family: monospace;
+				font-size: 0.9rem;
+				font-weight: normal;
+				margin: 0;
+			}
+
+			h5 a {
+				color: #666;
+			}
+
+			nav {
+				font-size: 1.5rem;
+				margin: 3em 0;
+			}
+
+			nav a {
+				border-bottom: solid 2px #00c;
+				text-decoration: none;
+			}
+
+			footer ul {
+				display: flex;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			footer ul li {
+				margin-right: 1rem;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<header>
+			<h1>C<span>hris </span>Z<span>arate</span></h1>
+		</header>
+
+		<main>
+			<article>
+				<h3>Partial collapse</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<h5><a href="sdf"><time datetime="2018-11-20 20:00">2018/11/20</time></a></h5>
+			</article>
+
+			<article>
+				<h3>Partial collapse</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<h5><a href="sdf"><time datetime="2018-11-20 20:00">2018/11/20</time></a></h5>
+			</article>
+
+		</main>
+
+		<nav>
+			<p><a href="sdf">Read more</a></p>
+		</nav>
+
+		<footer>
+			<p>I am <a href="mailto:&#099;&#104;&#114;&#105;&#115;&#064;&#122;&#097;&#114;&#097;&#116;&#101;&#046;&#111;&#114;&#103;">&#099;&#104;&#114;&#105;&#115;&#064;&#122;&#097;&#114;&#097;&#116;&#101;&#046;&#111;&#114;&#103;</a> and I make <a href="https://github.com/chriszarate">www things</a>.</p>
+		</footer>
+
+	</body>
 
 </html>
