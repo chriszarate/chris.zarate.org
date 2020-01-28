@@ -2,7 +2,8 @@ const fs = require( 'fs' );
 const path = require( 'path' );
 const util = require( 'util' );
 const dayjs = require( 'dayjs' );
-const { s3Bucket, ...config } = require( '../config' );
+const { s3Bucket, tagMap, ...config } = require( '../config' );
+const { getFeedItems } = require( './feed' );
 const { invalidate } = require( './invalidate' );
 const { renderTemplate } = require( './render' );
 const { putS3Object } = require( './s3' );
@@ -37,10 +38,32 @@ const publishHtml = async ( templateName, fileName, data, ContentType = 'text/ht
 	} );
 };
 
+const sortByDate = ( a, b ) => {
+	if ( a.date === b.date ) {
+		return 0;
+	}
+
+	return a.date > b.date ? -1 : 1;
+};
+
+const getType = ( tags = [] ) => {
+	const tagId = Object.keys( tagMap ).find( key => tags.includes( parseInt( key ) ) );
+	return tagMap[ tagId ] || 'post';
+};
+
+const mapPosts = post => ( {
+	...post,
+	type: getType( post.tags ),
+} );
+
 module.exports = async () => {
 	const pages = await getPages();
-	const posts = await getPosts();
 
+	const posts = [
+		...await getFeedItems(),
+		...await getPosts(),
+	].map( mapPosts ).sort( sortByDate );
+	
 	// Render aggregation pages.
 	await publishHtml( 'home', 'index.html', { posts } );
 	await publishHtml( 'feed', 'feed', { posts }, 'application/atom+xml' );

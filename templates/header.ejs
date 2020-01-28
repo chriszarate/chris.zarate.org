@@ -26,6 +26,7 @@
 				--color-bg: #fff;
 				--color-code: #ff9;
 				--color-link: #b03;
+				--color-link-muted: #901;
 				--color-nav: #666;
 				--color-text: #111;
 			}
@@ -35,6 +36,7 @@
 					--color-bg: #111;
 					--color-code: #606;
 					--color-link: #e00;
+					--color-link-muted: #c00;
 					--color-nav: #aaa;
 					--color-text: #fff;
 				}
@@ -67,6 +69,7 @@
 
 			a {
 				color: var( --color-link );
+				text-decoration-color: var( --color-link-muted );
 			}
 
 			article footer {
@@ -114,14 +117,24 @@
 				margin: 4em 0;
 			}
 
+			footer nav p {
+				margin: 0.25em 0;
+			}
+
 			.current a {
 				font-weight: bold;
 				text-decoration-style: wavy;
 				-webkit-text-decoration-style: wavy;
 			}
 
-			.tag {
-				margin-left: 3px;
+			.photos {
+				font-size: 0.9em;
+				margin-top: 3em;
+				text-transform: lowercase;
+			}
+
+			.photo h1 {
+				display: none;
 			}
 		</style>
 	</head>

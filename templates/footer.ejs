@@ -2,13 +2,18 @@
 
 		<% if ( archive ) { %>
 		<footer class="archive">
-			<nav>
-				<% posts.forEach( post => { %>
+			<nav class="posts">
+				<% posts.filter( ( { type } ) => 'photo' !== type ).forEach( post => { %>
 				<p class="<%= postId === post.id ? 'current' : '' %>">
 					<a href="<%= post.slug %>"><%- post.title.rendered %></a>
-					<% post.tags.filter( tagId => config.tagMap.hasOwnProperty( tagId ) ).forEach( tagId => { %>
-					<span class="tag" aria-label="<%= config.tagMap[ tagId ].label %>"><%= config.tagMap[ tagId ].display %></span>
-					<% } ); %>
+				</p>
+				<% } ); %>
+			</nav>
+			<nav class="photos">
+				<p aria-label="Photo">📸</p>
+				<% posts.filter( ( { type } ) => 'photo' === type ).forEach( post => { %>
+				<p class="<%= postId === post.id ? 'current' : '' %>">
+					<a href="<%= post.slug %>"><%- post.title.rendered %></a>
 				</p>
 				<% } ); %>
 			</nav>
