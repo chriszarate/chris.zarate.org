@@ -1,0 +1,19 @@
+		</main>
+
+		<% if ( archive ) { %>
+		<footer class="archive">
+			<nav>
+				<% posts.forEach( post => { %>
+				<p class="<%= postId === post.id ? 'current' : '' %>">
+					<a href="<%= post.slug %>"><%- post.title.rendered %></a>
+					<% post.tags.filter( tagId => config.tagMap.hasOwnProperty( tagId ) ).forEach( tagId => { %>
+					<span class="tag" aria-label="<%= config.tagMap[ tagId ].label %>"><%= config.tagMap[ tagId ].display %></span>
+					<% } ); %>
+				</p>
+				<% } ); %>
+			</nav>
+		</footer>
+		<% } %>
+
+	</body>
+</html>

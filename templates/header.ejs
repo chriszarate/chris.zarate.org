@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png" />
+		<link rel="alternate" type="application/atom+xml" href="feed" />
+
+		<title><%= title %> / <%= config.siteTitle %></title>
+
+		<style>
+			/*
+
+				╔═════════╗
+				║ C S S   ║
+				║ I S     ║
+				║ A W E S O M E
+				╚═════════╝
+
+				regrets, i have a few
+			*/
+
+			:root {
+				--color-bg: #fff;
+				--color-code: #ff9;
+				--color-link: #b03;
+				--color-nav: #666;
+				--color-text: #111;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--color-bg: #111;
+					--color-code: #606;
+					--color-link: #e00;
+					--color-nav: #aaa;
+					--color-text: #fff;
+				}
+			}
+
+			html {
+				background-color: var( --color-bg );
+				color: var( --color-text );
+				line-height: 1.4;
+				margin: 0 1em;
+			}
+
+			body {
+				font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				font-size: 1.2em;
+				margin: 1em auto;
+				max-width: 45rem;
+			}
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-size: 2em;
+				line-height: 1.25;
+				margin: 1.5em 0 0.75em 0;
+			}
+
+			a {
+				color: var( --color-link );
+			}
+
+			article footer {
+				color: var( --color-nav );
+				font-size: 0.9em;
+			}
+
+			article img {
+				height: auto;
+				position: relative;
+				width: 100%;
+			}
+
+			code {
+				background-color: var( --color-code );
+				font-size: 1.05em;
+				padding: 3px 5px;
+			}
+
+			li {
+				margin: 0.25em 0;
+			}
+
+			header nav h2 {
+				font-size: 1.25em;
+				margin-bottom: 0.25em;
+			}
+
+			header nav a {
+				color: var( --color-nav );
+				text-decoration: none;
+			}
+
+			header nav a:not(:first-child)::before {
+				content: '░ ';
+				display: inline;
+			}
+
+			header nav > a {
+				margin-left: 5px;
+			}
+
+			main,
+			.archive {
+				margin: 4em 0;
+			}
+
+			.current a {
+				font-weight: bold;
+				text-decoration-style: wavy;
+				-webkit-text-decoration-style: wavy;
+			}
+
+			.tag {
+				margin-left: 3px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<header>
+			<nav>
+				<h2 class="title"><a href="/"><%= config.siteTitle.toLowerCase() %></a></h2>
+				<div>
+					<a href="mailto:&#099;&#104;&#114;&#105;&#115;&#064;&#122;&#097;&#114;&#097;&#116;&#101;&#046;&#111;&#114;&#103;">mail</a>
+					<a href="https://github.com/chriszarate">code</a>
+					<a href="https://mastodon.technology/@zarate">mastodon</a>
+					<a href="https://pixelfed.social/zarate">pixelfed</a>
+				</div>
+			</nav>
+		</header>
+
+		<main>
