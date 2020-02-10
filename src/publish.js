@@ -53,6 +53,10 @@ const getType = ( tags = [] ) => {
 
 const mapPosts = post => ( {
 	...post,
+	title: {
+		...post.title,
+		rendered: post.title.rendered.replace( /&nbsp;/g, ' ' ),
+	},
 	type: getType( post.tags ),
 } );
 

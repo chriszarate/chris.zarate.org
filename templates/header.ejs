@@ -24,7 +24,7 @@
 
 			:root {
 				--color-bg: #fff;
-				--color-code: #ff9;
+				--color-code: #ddd;
 				--color-link: #b03;
 				--color-link-muted: #901;
 				--color-nav: #666;
@@ -33,10 +33,10 @@
 
 			@media (prefers-color-scheme: dark) {
 				:root {
-					--color-bg: #111;
-					--color-code: #606;
-					--color-link: #e00;
-					--color-link-muted: #c00;
+					--color-bg: #222;
+					--color-code: #444;
+					--color-link: #f33;
+					--color-link-muted: #c33;
 					--color-nav: #aaa;
 					--color-text: #fff;
 				}
@@ -87,6 +87,12 @@
 				background-color: var( --color-code );
 				font-size: 1.05em;
 				padding: 3px 5px;
+			}
+
+			pre code {
+				display: block;
+				overflow-x: auto;
+				padding: 0.25em;
 			}
 
 			li {
