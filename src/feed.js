@@ -1,5 +1,4 @@
 const Parser = require( 'rss-parser' );
-const { pixelfedFeed: feedUrl } = require( '../config' );
 
 const parser = new Parser( {
   customFields: {
@@ -7,8 +6,8 @@ const parser = new Parser( {
   },
 } );
 
-exports.getFeedItems = async () => {
- 	const feed = await parser.parseURL( feedUrl );
+exports.getPixelfedFeed = async ( { tagId, url } ) => {
+ 	const feed = await parser.parseURL( url );
 
 	// Map feed items to something resembling the WP post objects so that they can
 	// use the same templates.
@@ -24,7 +23,6 @@ exports.getFeedItems = async () => {
 		[ , photo ] = photo;
 		photo = photo.replace( /_thumb\./, '.' );
 		photo = `<p><img src="${photo}" alt=""></p>`;
-		photo += `<p>${title}</p>`;
 
 		let id = new Date( item.isoDate ).getTime() / 1000;
 		let oid = item.id.match( /([0-9]+)$/ );
@@ -45,7 +43,7 @@ exports.getFeedItems = async () => {
 			modified: item.isoDate,
 			slug: `photo-${id}`,
 			source: 'pixelfed',
-			tags: [ 994 ],
+			tags: [ tagId ],
 			title: {
 				rendered: title,
 			},

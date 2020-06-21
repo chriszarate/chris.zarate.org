@@ -1,6 +1,8 @@
 <article itemscope itemtype="http://schema.org/BlogPosting" class="<%= post.type %>">
 	<header>
+		<% if ( post.title.rendered ) { %>
 		<h1 itemprop="headline"><%- post.title.rendered %></h1>
+		<% } %>
 	</header>
 	<%- post.content.rendered.replace( /\s+style="[^"]+"/g, '' ) %>
 	<footer>

@@ -2,8 +2,8 @@ const fs = require( 'fs' );
 const path = require( 'path' );
 const util = require( 'util' );
 const dayjs = require( 'dayjs' );
-const { s3Bucket, tagMap, ...config } = require( '../config' );
-const { getFeedItems } = require( './feed' );
+const { feeds, s3Bucket, tags, ...config } = require( '../config' );
+const { getPixelfedFeed } = require( './feed' );
 const { invalidate } = require( './invalidate' );
 const { renderTemplate } = require( './render' );
 const { putS3Object } = require( './s3' );
@@ -46,34 +46,33 @@ const sortByDate = ( a, b ) => {
 	return a.date > b.date ? -1 : 1;
 };
 
-const getType = ( tags = [] ) => {
-	const tagId = Object.keys( tagMap ).find( key => tags.includes( parseInt( key ) ) );
-	return tagMap[ tagId ] || 'post';
-};
-
 const mapPosts = post => ( {
 	...post,
 	title: {
 		...post.title,
-		rendered: post.title.rendered.replace( /&nbsp;/g, ' ' ),
+		rendered: ( post.title.rendered || '' ).replace( /&nbsp;/g, ' ' ),
 	},
-	type: getType( post.tags ),
+	tagged: tags.map( tag => tag.id ).some( tagId => post.tags.includes( tagId ) ),
 } );
 
 module.exports = async () => {
 	const pages = await getPages();
 
 	const posts = [
-		...await getFeedItems(),
+		...await getPixelfedFeed( feeds[0] ),
 		...await getPosts(),
 	].map( mapPosts ).sort( sortByDate );
-	
+
+	const post = posts.find( ( { tagged } ) => ! tagged ) || allPosts[0];
+	const filterPosts = id => posts.filter( post => id !== post.id );
+	const homePosts = filterPosts( post.id );
+
 	// Render aggregation pages.
-	await publishHtml( 'home', 'index.html', { posts } );
-	await publishHtml( 'feed', 'feed', { posts }, 'application/atom+xml' );
+	await publishHtml( 'home', 'index.html', { post, posts: homePosts, tags } );
+	await publishHtml( 'feed', 'feed', { posts: homePosts }, 'application/atom+xml' );
 
 	// Render posts and pages.
-	await Promise.all( posts.map( post => publishHtml( 'post', post.slug, { post, posts } ) ) );
+	await Promise.all( posts.map( post => publishHtml( 'post', post.slug, { post, posts: filterPosts( post.id ), tags } ) ) );
 	await Promise.all( pages.map( page => publishHtml( 'page', page.slug, { page } ) ) );
 
 	// Invalidate the cache.

@@ -3,20 +3,28 @@
 		<% if ( archive ) { %>
 		<footer class="archive">
 			<nav class="posts">
-				<% posts.filter( ( { type } ) => 'photo' !== type ).forEach( post => { %>
-				<p class="<%= postId === post.id ? 'current' : '' %>">
-					<a href="<%= post.slug %>"><%- post.title.rendered %></a>
-				</p>
-				<% } ); %>
+				<ul>
+					<% posts.filter( ( { tagged } ) => ! tagged ).forEach( post => { %>
+					<li><a href="<%= post.slug %>"><%- post.title.rendered %></a></li>
+					<% } ); %>
+				</ul>
 			</nav>
-			<nav class="photos">
-				<p aria-label="Photo">📸</p>
-				<% posts.filter( ( { type } ) => 'photo' === type ).forEach( post => { %>
-				<p class="<%= postId === post.id ? 'current' : '' %>">
-					<a href="<%= post.slug %>"><%- post.title.rendered %></a>
-				</p>
-				<% } ); %>
+			<% tags.forEach( tag => { %>
+			<nav class="tag-<%= tag.slug %>">
+				<h3 aria-label="<%= tag.label %>"><%= tag.emoji %></h3>
+				<ul>
+					<% posts.filter( post => post.tags.includes( tag.id ) ).slice( 0, 10 ).forEach( post => { %>
+					<li><a href="<%= post.slug %>"><%- post.title.rendered %></a></li>
+					<% } ); %>
+				</ul>
+				<h3 aria-label="Info">💁</h3>
+				<ul>
+					<% config.nav.forEach( ( { link, title } ) => { %>
+					<li><a href="<%= link %>"><%= title %></a></li>
+					<% } ); %>
+				</ul>
 			</nav>
+			<% } ); %>
 		</footer>
 		<% } %>
 
