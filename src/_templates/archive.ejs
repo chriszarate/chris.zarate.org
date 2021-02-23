@@ -1,0 +1,18 @@
+---
+permalink: "/archive"
+---
+<%- include( '/header', { post: null, pageTitle: 'Archive' } ); %>
+
+<section>
+	<h1 itemprop="headline">Archive</h1>
+
+	<ul>
+		<% wp.posts.forEach( post => { %>
+			<li>
+				<a href="/<%= post.slug %>"><%- post.title %></a>
+			</li>
+		<% } ); %>
+	</ul>
+</section>
+
+<%- include( '/footer', { showLinks: false } ); %>

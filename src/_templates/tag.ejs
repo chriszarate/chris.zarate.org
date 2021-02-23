@@ -1,0 +1,23 @@
+---
+pagination:
+  data: wp.tags
+  size: 1
+  alias: tag
+permalink: "/tag/<%= tag.slug %>"
+---
+<%- include( '/header', { post: null, pageTitle: 'Tag' } ); %>
+
+<section>
+	<h1 itemprop="headline">Tag: <%= tag.name %></h1>
+
+	<ul>
+		<% tag.posts.forEach( i => { %>
+			<% const post = wp.posts[ i ]; %>
+			<li>
+				<a href="/<%= post.slug %>"><%- post.title %></a>
+			</li>
+		<% } ); %>
+	</ul>
+</section>
+
+<%- include( '/footer', { showLinks: true } ); %>

@@ -1,0 +1,22 @@
+<%- include( '/header', { pageTitle: post.title, post } ); %>
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+	<header>
+		<h1 itemprop="headline"><a href="/<%= post.slug %>"><%- post.title %></a></h1>
+	</header>
+	<%- post.html %>
+	<footer>
+		<p>
+			<%= post.dateString %>
+			<% if ( post.tags.length ) { %>
+			in
+			<% post.tags.forEach( ( tag, i ) => { %>
+				<% const separator = i < post.tags.length - 1 ? ',' : ''; %>
+				<a href="/tag/<%= tag.slug %>"><%= tag.name %></a><%= separator %>
+			<% } ); %>
+		<% } %>
+		</p>
+	</footer>
+</article>
+
+<%- include( '/footer', { showLinks: true } ); %>

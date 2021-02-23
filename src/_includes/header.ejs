@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title><%= pageTitle %> / <%= meta.siteTitle %></title>
+
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png" />
+		<link rel="alternate" type="application/atom+xml" href="feed" />
+
+		<style>
+			/*
+
+				╔═════════╗
+				║ C S S   ║
+				║ I S     ║
+				║ A W E S O M E
+				╚═════════╝
+
+				CSS. Not too much. Mostly ... this metaphor doesn't really work.
+			*/
+
+			:root {
+				--color-bg: #fff;
+				--color-link: #36c;
+				--color-text: #111;
+				--color-text-muted: #999;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--color-bg: #111;
+					--color-link: #9cf;
+					--color-text: #fff;
+				}
+			}
+
+			html {
+				background-color: var( --color-bg );
+				color: var( --color-text );
+				line-height: 1.4;
+				margin: 0;
+			}
+
+			body {
+				font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				font-size: 1.1em;
+				margin: 2em auto;
+				max-width: 40rem;
+				padding: 1em;
+			}
+
+			main {
+				margin: 3em 0;
+			}
+
+			h1,
+			h2,
+			h3,
+			h4 {
+				line-height: 1.25;
+				margin: 1.5em 0 0.75em 0;
+			}
+
+			blockquote,
+			figure,
+			p,
+			pre {
+				margin: 1.5em 0;
+			}
+
+			blockquote {
+				border-left: solid 5px var( --color-text-muted );
+				padding-left: 1em;
+			}
+
+			figcaption {
+				font-style: italic;
+				margin: 0.5em 0;
+			}
+
+			img {
+				border-radius: 0.3em;
+				display: block;
+				height: auto;
+				margin: 0 auto;
+				max-width: 100%;
+			}
+
+			a {
+				color: var( --color-link );
+			}
+
+			h1 a {
+				color: var( --color-text );
+				text-decoration: none;
+			}
+
+			article footer,
+			article footer a {
+				color: var( --color-text-muted );
+			}
+
+			li {
+				margin: 0.25em 0;
+			}
+		</style>
+
+		<% if ( post && post.hasCodeSnippets ) { %>
+		<link rel="preload" href="/assets/prism.css" as="style" onload="this.rel='stylesheet'">
+		<% } %>
+	</head>
+
+	<body>
+
+		<header>
+			<a href="/">
+				<%- include( '/logo' ); %>
+			</a>
+		</header>
+
+		<main>

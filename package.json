@@ -1,29 +1,21 @@
 {
-  "name": "wordpress-com-static-site",
+  "name": "chris.zarate.org",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "dev": "DEBUG=true node src/publish-manual.js",
-    "policy": "node src/policy.js",
-    "publish": "node src/publish-manual.js",
-    "setup": "npx claudia create --region us-east-1 --api-module index",
-    "update": "npx claudia update"
+    "build": "eleventy",
+    "deploy": "npm run build && node publish.js",
+    "start": "eleventy --watch --serve"
   },
-  "files": [
-    "config.js",
-    "index.js",
-    "src/*.js",
-    "templates/*.ejs"
-  ],
-  "author": "",
+  "author": "Chris Zarate",
   "license": "ISC",
   "dependencies": {
+    "@11ty/eleventy": "^0.11.1",
     "aws-sdk": "^2.382.0",
-    "claudia-api-builder": "^4.1.1",
-    "dayjs": "^1.7.8",
-    "ejs": "^2.6.1",
-    "rss-parser": "^3.7.3",
+    "html-entities": "^2.1.0",
+    "mime-types": "^2.1.29",
+    "prismjs": "^1.23.0",
     "wpapi": "^1.1.2"
-  }
+  },
+  "devDependencies": {}
 }

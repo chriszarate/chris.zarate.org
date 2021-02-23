@@ -1,50 +1,36 @@
-# WordPress.com Static Site Generator
+# Eleventy / 11y WordPress.com static site generator
 
-This is a simple static site generator that uses the wordpress.com REST API as
-a backend and publishes to an AWS S3 bucket. If you use CloudFront to serve /
-terminate TLS, it will issue an invalidation request.
+This is an [Eleventy / 11y][11y] static site generator using a [WordPress.com][wp]
+blog as its data source. It pulls posts and pages from the WordPress.com REST
+API, supplies the data to Eleventy templates, uploads the result to an S3 bucket,
+and optionally invalidates a CloudFront distribution.
 
-It uses AWS API Gateway to provide a webhook, which is called whenever you
-publish or update a post (or page) on wordpress.com. It will look a lot like
-[my blog][blog], because that's what it is.
+It also provides dark-mode-aware syntax highlighting using [Prism][prism].
 
+In other words, it allows you to use WordPress.com as your CMS but publish a
+static site to S3. This repo powers my [personal site][me] but you are free to
+fork and adapt it for your own purposes.
 
+## Setup
 
-1. Copy `config.example.js` to `config.js` and edit it.
+Copy `config.example.js` to `config.js` and edit it to provide your site details.
 
-2. Create the webhook on AWS:
-
-```sh
-npm run setup
-```
-
-3. Give the Lambda function permission to write to your S3 bucket.
-
-```sh
-npm run policy
-```
-
-4. [Add the webhook][webhook] to your wordpress.com site for the following events:
-
-```
-publish_post
-publish_page
-```
-
-## Updating manually
-
-When running locally, make sure your AWS credentials are available.
+Start Eleventy's dev server to work on your templates. Note that data will only
+be fetched once and cached. If you make changes in WordPress.com, you'll need to
+stop and restart.
 
 ```sh
-npm run publish
+npm start
 ```
 
-Alternatively, you can just `POST` to your endpoint:
+Publishing is manual. Make sure your AWS credentials are available via
+environment variables or `~/.aws/credentials`.
 
 ```sh
-curl -X POST https://API_GATEWAY_ID.execute-api.AWS_REGION.amazonaws.com/latest/update
+npm run deploy
 ```
 
-
-[blog]: https://chris.zarate.org
-[webhook]: https://en.support.wordpress.com/webhooks/
+[11y]: https://www.11ty.dev
+[me]: https://chris.zarate.org
+[prism]: https://prismjs.com
+[wp]: https://wordpress.com

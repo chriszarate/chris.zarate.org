@@ -1,0 +1,17 @@
+---
+pagination:
+  data: wp.pages
+  size: 1
+  alias: post
+permalink: "/<%= post.slug %>"
+---
+<%- include( '/header', { post, pageTitle: post.title } ); %>
+
+<article>
+	<header>
+		<h1><a href="/<%= post.slug %>"><%- post.title %></a></h1>
+	</header>
+	<%- post.html %>
+</article>
+
+<%- include( '/footer', { showLinks: false } ); %>
