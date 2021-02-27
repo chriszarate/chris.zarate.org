@@ -45,7 +45,7 @@ function formatWPPost ( post ) {
 		dateString: formatDate( post.date_gmt ),
 		hasCodeSnippets: /<code[\s>]/.test( post.content.rendered ),
 		html: post.content.rendered.replace( codeRegex, highlightCode ),
-		title: post.title.rendered,
+		title: decode( post.title.rendered ).replace( /\s+/g, ' ' ).trim(),
 	};
 }
 

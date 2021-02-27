@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title><%= pageTitle %> / <%= meta.siteTitle %></title>
+		<title><%= pageTitle %> | <%= meta.siteTitle %></title>
 
 		<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png" />
 		<link rel="alternate" type="application/atom+xml" href="feed" />
@@ -27,6 +27,7 @@
 				--color-link: #36c;
 				--color-text: #111;
 				--color-text-muted: #999;
+				--font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 			}
 
 			@media (prefers-color-scheme: dark) {
@@ -45,11 +46,15 @@
 			}
 
 			body {
-				font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				font-family: var(--font-family);
 				font-size: 1.1em;
 				margin: 2em auto;
 				max-width: 40rem;
 				padding: 1em;
+			}
+
+			a {
+				text-underline-offset: 0.1em;
 			}
 
 			main {

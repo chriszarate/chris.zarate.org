@@ -86,7 +86,7 @@
 	--prism-font-size: 1em;
 	--prism-line-height: 1.5em;
 	--prism-font-family: Menlo, Consolas, monospace;
-	--prism-inline-font-size: var(--prism-font-size);
+	--prism-inline-font-size: 0.9em;
 	--prism-block-font-size: var(--prism-font-size);
 
 	/* Sizing */
@@ -146,6 +146,7 @@ pre {
 	padding: var(--prism-inline-padding-y) var(--prism-inline-padding-x);
 	border-radius: var(--prism-inline-radius);
 	background: var(--prism-inline-background);
+	white-space: pre-wrap;
 }
 
 /* Selection */
