@@ -1,0 +1,9 @@
+<nav>
+	<h1 itemprop="headline"><%= title %></h1>
+
+	<% posts.forEach( post => { %>
+		<p>
+			<a href="/<%= post.slug %>"><%- post.title %></a>
+		</p>
+	<% } ); %>
+</nav>

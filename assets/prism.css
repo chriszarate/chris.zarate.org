@@ -83,10 +83,10 @@
 	--prism-marker-font-size: 0.8em;
 
 	/* Font */
-	--prism-font-size: 1em;
+	--prism-font-size: 1rem;
 	--prism-line-height: 1.5em;
 	--prism-font-family: Menlo, Consolas, monospace;
-	--prism-inline-font-size: 0.9em;
+	--prism-inline-font-size: 0.9rem;
 	--prism-block-font-size: var(--prism-font-size);
 
 	/* Sizing */

@@ -19,7 +19,6 @@
 				║ A W E S O M E
 				╚═════════╝
 
-				CSS. Not too much. Mostly ... this metaphor doesn't really work.
 			*/
 
 			:root {
@@ -27,7 +26,8 @@
 				--color-link: #36c;
 				--color-text: #111;
 				--color-text-muted: #999;
-				--font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				--font-family: 'Crimson Text', Georgia, serif;
+				--font-family-sans: 'Proxima Nova', -apple-system, system-ui, sans-serif;
 			}
 
 			@media (prefers-color-scheme: dark) {
@@ -36,6 +36,38 @@
 					--color-link: #9cf;
 					--color-text: #fff;
 				}
+			}
+
+			@font-face {
+				font-display: swap;
+				font-family: 'Crimson Text';
+				font-style: normal;
+				font-weight: 400;
+				src: url(/assets/CrimsonText-Regular.woff2) format('woff2');
+			}
+
+			@font-face {
+				font-display: swap;
+				font-family: 'Crimson Text';
+				font-style: italic;
+				font-weight: 400;
+				src: url(/assets/CrimsonText-Italic.woff2) format('woff2');
+			}
+
+			@font-face {
+				font-display: swap;
+				font-family: 'Proxima Nova';
+				font-style: normal;
+				font-weight: 400;
+				src: url(/assets/ProximaNova-Regular.woff2) format('woff2');
+			}
+
+			@font-face {
+				font-display: swap;
+				font-family: 'Proxima Nova';
+				font-style: normal;
+				font-weight: 700;
+				src: url(/assets/ProximaNova-Bold.woff2) format('woff2');
 			}
 
 			html {
@@ -47,32 +79,49 @@
 
 			body {
 				font-family: var(--font-family);
-				font-size: 1.1em;
+				font-size: 1.25em;
 				margin: 2em auto;
 				max-width: 40rem;
 				padding: 1em;
 			}
 
 			a {
+				color: var( --color-link );
 				text-underline-offset: 0.1em;
+			}
+
+			header a {
+				text-decoration: none;
+			}
+
+			header a,
+			article footer a {
+				color: inherit;
 			}
 
 			main {
 				margin: 3em 0;
 			}
 
+			footer,
+			nav {
+				font-family: var(--font-family-sans);
+			}
+
 			h1,
 			h2,
 			h3,
 			h4 {
+				font-family: var(--font-family-sans);
 				line-height: 1.25;
 				margin: 1.5em 0 0.75em 0;
 			}
 
-			blockquote,
-			figure,
-			p,
-			pre {
+			nav p {
+				margin: 0.5em 0;
+			}
+
+			figure {
 				margin: 1.5em 0;
 			}
 
@@ -94,18 +143,9 @@
 				max-width: 100%;
 			}
 
-			a {
-				color: var( --color-link );
-			}
-
-			h1 a {
-				color: var( --color-text );
-				text-decoration: none;
-			}
-
-			article footer,
-			article footer a {
+			article footer {
 				color: var( --color-text-muted );
+				font-size: 1.1rem;
 			}
 
 			li {
