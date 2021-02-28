@@ -26,6 +26,8 @@ const invalidationParams = {
 	},
 };
 
+const longLivedAssetExtensions = [ 'css', 'gif', 'jpg', 'jpeg', 'png', 'svg', 'woff', 'woff2' ];
+
 function invalidate () {
 	if ( ! DistributionId ) {
 		console.log( `No CloudFront distribution defined in config, skipping invalidation...` );
@@ -65,12 +67,18 @@ async function publishDir ( dir ) {
 				ContentType = 'application/atom+xml; charset=utf-8';
 			}
 
+			let CacheControl = null;
+			if ( longLivedAssetExtensions.includes( extension ) ) {
+				CacheControl = 'max-age=31556952';
+			}
+
 			console.log( `Uploading ${Key} (${ContentType})...` );
 
 			await putS3Object( {
 				ACL: 'public-read',
 				Body: Buffer.from( contents ),
 				Bucket,
+				CacheControl,
 				ContentType,
 				Key,
 			} );

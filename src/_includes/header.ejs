@@ -4,11 +4,17 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="The personal website of Chris Zarate">
 
 		<title><%= pageTitle %> | <%= meta.siteTitle %></title>
 
 		<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png" />
 		<link rel="alternate" type="application/atom+xml" href="feed" />
+
+		<link rel="preload" href="/assets/CrimsonText-Regular.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="/assets/CrimsonText-Italic.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="/assets/ProximaNova-Regular.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="/assets/ProximaNova-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
 		<style>
 			/*
@@ -25,7 +31,7 @@
 				--color-bg: #fff;
 				--color-link: #36c;
 				--color-text: #111;
-				--color-text-muted: #999;
+				--color-text-muted: #707070;
 				--font-family: 'Crimson Text', Georgia, serif;
 				--font-family-sans: 'Proxima Nova', -apple-system, system-ui, sans-serif;
 			}
@@ -35,11 +41,12 @@
 					--color-bg: #111;
 					--color-link: #9cf;
 					--color-text: #fff;
+					--color-text-muted: #808080;
 				}
 			}
 
 			@font-face {
-				font-display: swap;
+				font-display: optional;
 				font-family: 'Crimson Text';
 				font-style: normal;
 				font-weight: 400;
@@ -47,7 +54,7 @@
 			}
 
 			@font-face {
-				font-display: swap;
+				font-display: optional;
 				font-family: 'Crimson Text';
 				font-style: italic;
 				font-weight: 400;
@@ -55,7 +62,7 @@
 			}
 
 			@font-face {
-				font-display: swap;
+				font-display: optional;
 				font-family: 'Proxima Nova';
 				font-style: normal;
 				font-weight: 400;
@@ -63,7 +70,7 @@
 			}
 
 			@font-face {
-				font-display: swap;
+				font-display: optional;
 				font-family: 'Proxima Nova';
 				font-style: normal;
 				font-weight: 700;
